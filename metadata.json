@@ -1,0 +1,6 @@
+{
+  "name": "BLESSIKAA",
+  "description": "Build a Blessed Life...! Complete ecosystem featuring 73+ 21-day neuroplastic challenges, 69+ universal service workflows, encrypted vault, and community reflections.",
+  "requestFramePermissions": ["notifications"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

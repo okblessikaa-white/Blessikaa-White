@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  /* Blessikaa Primary Master Light Purple Tokens */
+  --color-primary: #6C3FE8;
+  --color-primary-dark: #4B22B8;
+  --color-primary-light: #8F67F5;
+  --color-purple-soft: #EEE8FF;
+  --color-purple-ultrasoft: #F8F5FF;
+
+  --bg-primary: #FCFAFF;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F8F5FF;
+  --bg-input: #FFFFFF;
+
+  --text-primary: #17142B;
+  --text-secondary: #6E6880;
+  --text-muted: #8E87A0;
+
+  --border-color: #E6E0F2;
+  --border-active: #6C3FE8;
+
+  --gradient-start: #6C3FE8;
+  --gradient-end: #4B22B8;
+  --gradient-accent: #8F67F5;
+
+  --shadow-card: 0 4px 24px rgba(108, 63, 232, 0.07);
+  --shadow-glow: 0 0 32px rgba(108, 63, 232, 0.14);
+
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(230, 224, 242, 0.8);
+
+  --success: #22A866;
+  --warning: #F2A93B;
+  --error: #E5484D;
+  --info: #3B82F6;
+}
+
+.dark {
+  --bg-primary: #111126;
+  --bg-secondary: #191936;
+  --bg-card: #191936;
+  --bg-card-hover: #242044;
+  --bg-input: #1F1C3F;
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #B9B2D0;
+  --text-muted: #837B9D;
+
+  --border-color: #2F2A56;
+  --border-active: #8F67F5;
+
+  --glass-bg: rgba(25, 25, 54, 0.92);
+  --glass-border: rgba(47, 42, 86, 0.7);
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 32px rgba(108, 63, 232, 0.25);
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(238, 232, 255, 0.7);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(143, 103, 245, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(108, 63, 232, 0.7);
+}
+
+/* Animations */
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.92; transform: scale(1.02); }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
+
+/* Blessikaa Luminous White Embossed Section Standards */
+.blessikaa-section-embossed {
+  background-color: #FFFFFF;
+  border-width: 2px;
+  border-color: rgba(221, 214, 254, 0.9);
+  box-shadow: 0 10px 30px -4px rgba(108, 63, 232, 0.12), 0 4px 12px -2px rgba(108, 63, 232, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+}
+.dark .blessikaa-section-embossed {
+  background-color: #1E1A3D;
+  border-color: #383068;
+  box-shadow: 0 10px 30px -4px rgba(0, 0, 0, 0.5), 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+}
+
+.blessikaa-inner-embossed {
+  background-color: #FFFFFF;
+  border-width: 2px;
+  border-color: rgba(221, 214, 254, 0.85);
+  box-shadow: 0 4px 14px -1px rgba(108, 63, 232, 0.09), 0 2px 6px -1px rgba(108, 63, 232, 0.05);
+}
+.dark .blessikaa-inner-embossed {
+  background-color: #15112E;
+  border-color: #383068;
+  box-shadow: 0 4px 14px -1px rgba(0, 0, 0, 0.4);
+}

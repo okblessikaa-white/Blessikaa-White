@@ -1,0 +1,59 @@
+[
+  {
+    "name": "advance_to_next_habit_day",
+    "description": "Step the user forward to the next unlocked day plan in the infinite continuum beyond Day 30",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "challengeId": { "type": "string", "description": "The unique challenge ID" },
+        "targetDay": { "type": "number", "description": "The target day to advance to (e.g. 31, 32, ... 1000)" }
+      },
+      "required": ["challengeId", "targetDay"]
+    },
+    "requiresConfirmation": false,
+    "isReversible": true
+  },
+  {
+    "name": "get_continuum_cycle_data",
+    "description": "Retrieve milestone info and day plans for a specific 30-day continuum cycle",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "cycleId": { "type": "string", "description": "ID of the continuum cycle (e.g. cycle-2 for Days 31-60)" },
+        "challengeId": { "type": "string", "description": "The unique challenge ID" }
+      },
+      "required": ["cycleId", "challengeId"]
+    },
+    "requiresConfirmation": false,
+    "isReversible": false
+  },
+  {
+    "name": "practice_future_day_early",
+    "description": "Unlock and open an early preview session for an upcoming habit day without streak penalty",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "challengeId": { "type": "string", "description": "The unique challenge ID" },
+        "day": { "type": "number", "description": "The future day number to practice early" }
+      },
+      "required": ["challengeId", "day"]
+    },
+    "requiresConfirmation": false,
+    "isReversible": true
+  },
+  {
+    "name": "load_stream_horizon",
+    "description": "Expand the dynamic timeline view beyond the current horizon in stream mode",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "challengeId": { "type": "string", "description": "The unique challenge ID" },
+        "currentHorizon": { "type": "number", "description": "Current max day rendered" },
+        "additionalDays": { "type": "number", "description": "Number of days to add (default 30)" }
+      },
+      "required": ["challengeId", "currentHorizon"]
+    },
+    "requiresConfirmation": false,
+    "isReversible": true
+  }
+]

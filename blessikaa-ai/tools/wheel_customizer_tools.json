@@ -1,0 +1,80 @@
+{
+  "system": "Blessikaa AI Agent Companion",
+  "domain": "gamification_wheels",
+  "version": "2.4.0",
+  "tools": [
+    {
+      "name": "get_wheel_configuration",
+      "description": "Fetches the active triangle count and slice items for the user's positive reward wheel or penalty wheel.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "wheelType": {
+            "type": "string",
+            "enum": ["positive", "penalty"],
+            "description": "The wheel category to inspect."
+          }
+        },
+        "required": ["wheelType"]
+      },
+      "confirmationRequired": false,
+      "reversible": false
+    },
+    {
+      "name": "update_wheel_configuration",
+      "description": "Updates the number of triangles (4 to 12) and configures the text, icon, reward/penalty value, and color of each triangle slice.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "wheelType": {
+            "type": "string",
+            "enum": ["positive", "penalty"],
+            "description": "The target wheel to configure."
+          },
+          "triangleCount": {
+            "type": "integer",
+            "minimum": 4,
+            "maximum": 12,
+            "description": "The number of triangles to divide the wheel into."
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "title": { "type": "string" },
+                "icon": { "type": "string" },
+                "value": { "type": "number" },
+                "type": { "type": "string" },
+                "color": { "type": "string" }
+              },
+              "required": ["id", "title", "icon", "value", "type", "color"]
+            },
+            "description": "List of triangle slice definitions."
+          }
+        },
+        "required": ["wheelType", "triangleCount", "items"]
+      },
+      "confirmationRequired": true,
+      "reversible": true
+    },
+    {
+      "name": "spin_gamified_wheel",
+      "description": "Executes a random spin on either the positive reward wheel or penalty accountability wheel, and dispatches coins, XP, or accountability actions to the user state.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "wheelType": {
+            "type": "string",
+            "enum": ["positive", "penalty"],
+            "description": "Which wheel to spin."
+          }
+        },
+        "required": ["wheelType"]
+      },
+      "confirmationRequired": false,
+      "reversible": false
+    }
+  ]
+}
